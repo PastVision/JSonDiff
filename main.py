@@ -11,7 +11,7 @@ class JSonDiff:
     def compare(self):
         total_count = 0
         for f in os.listdir(self.path1):
-            if f == 'diff':
+            if not f.endswith(".json"):
                 continue
             json1: dict = json.load(open(os.path.join(self.path1, f), 'rt'))
             json2: dict = json.load(open(os.path.join(self.path2, f), 'rt'))
