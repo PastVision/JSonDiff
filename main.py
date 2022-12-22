@@ -27,6 +27,8 @@ class JSonDiff:
                 fp.write(json.dumps(result, indent=4))
                 print(
                     f'{count} differences in {f} saved to {os.path.join(diffpath, f)}')
+            total_count += count
+        print(f'\nTotal Differences: {total_count}')
 
 
 if __name__ == '__main__':
