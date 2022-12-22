@@ -8,12 +8,11 @@ class JSonDiff:
         self.path1 = path1
         self.path2 = path2
 
-    def gen_result(self, result):
-        pass
-
     def compare(self):
         total_count = 0
         for f in os.listdir(self.path1):
+            if f == 'diff':
+                continue
             json1: dict = json.load(open(os.path.join(self.path1, f), 'rt'))
             json2: dict = json.load(open(os.path.join(self.path2, f), 'rt'))
             result = DeepDiff(json1, json2)['values_changed']
