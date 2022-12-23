@@ -8,7 +8,7 @@ class JSonDiff:
         self.path1 = path1
         self.path2 = path2
 
-    def compare(self):
+    def compare(self) -> None:
         total_count = 0
         for f in os.listdir(self.path1):
             if not f.endswith(".json"):
